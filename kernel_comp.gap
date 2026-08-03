@@ -108,24 +108,6 @@ IsKerTriv := function(d)
     od; 
 end;
 
-IsKerTrivmn := function(m,n,fm,fn)
-	local output, i, j;
-    output := Concatenation("ConjCheck/IsKerTrivmn_", String(m), "_f_", String(fm), "_", String(n), "_f_", String(fn), ".csv");
-    PrintTo(output, "T, B, Ker\n");
-
-    for i in [fm.. NrTransitiveGroups(m)] do
-        for j in [fn.. NrTransitiveGroups(n)] do
-            AppendTo(output,
-                Concatenation(
-                String([m,i]), ", ",
-                String([n,j]), ", ",
-                String(Kercheck(m,i,n,j)), "\n"
-                )
-            );
-        od;
-	od;
-end;
-
 
 
 
