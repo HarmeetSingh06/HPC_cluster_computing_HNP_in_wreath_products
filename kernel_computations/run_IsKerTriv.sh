@@ -9,7 +9,9 @@ d="$1"
 module load miniforge3 # load miniforge3 for python
 source "$(conda info --base)/etc/profile.d/conda.sh"
 conda activate sage_nx_tf # activate virtual environment sage_nx_tf which has sage
-sage -gap -q <<SCR # in the sage platform use the GAP interface to run the below code
+
+#in the sage platform use the GAP interface to run the below code
+sage -gap -q <<SCR 
 Read("ConjCheck/kernel_comp.gap");
 IsKerTriv(${d});
 quit;
